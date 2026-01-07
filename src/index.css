@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* In rules ko file ke end mein paste kar dein */
+:root, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Scrollbar ko poori screen se khatam karne ke liye */
+}
+
+/* Sidebar ka scroll fix */
+.ai-diagnostics-panel {
+  max-height: calc(100vh - 200px); /* Adjust height according to your header/footer */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Boxes ko dabne (shrink) se rokne ke liye */
+.ai-diagnostics-panel > div {
+  flex-shrink: 0;
+} 
