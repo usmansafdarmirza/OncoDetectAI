@@ -1,16 +1,57 @@
-# React + Vite
+OncoDetectAI: AI-Powered Prostate PNI Detection System
+OncoDetectAI is a full-stack medical AI solution designed to assist pathologists in identifying Perineural Invasion (PNI) in prostate histopathology slides. It combines a high-performance YOLOv11 deep learning model with a modern React dashboard for seamless clinical use.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌟 Project Overview
+Detecting PNI is a time-consuming task for pathologists but critical for determining cancer aggressiveness. This project automates the detection process using Instance Segmentation,
+ providing real-time visual feedback and diagnostic statistics.
 
-Currently, two official plugins are available:
+🛠️ System Architecture
+The project is divided into three main components:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. AI Model (The Engine)
+Architecture: YOLOv11 (Instance Segmentation).
 
-## React Compiler
+Training: Fine-tuned on a specialized dataset of prostate slides.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Performance: Achieved 92.4% Precision and 89.1% Recall.
 
-## Expanding the ESLint configuration
+Optimization: Supports both CPU and GPU (CUDA) inference.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Backend (The Server)
+Framework: Python Flask.
+
+Features:
+
+REST API for image and batch/folder processing.
+
+Dynamic model switching (YOLOv11-Prostate, Recall-Boost, Standard).
+
+Image pre-processing using OpenCV and NumPy.
+
+3. Frontend (The Dashboard)
+Framework: React.js + Tailwind CSS.
+
+Capabilities:
+
+Interactive Workspace: Zoom, pan, and real-time polygon overlays.
+
+AI Diagnostics: Latency tracking, PNI vs. Normal breakdown charts.
+
+Batch Export: Download analyzed results as individual images or a consolidated ZIP file.
+
+
+🔹 Technologies Used
+
+Frontend: React.js, Tailwind CSS, Vite
+
+Backend: Python, Flask/FastAPI, YOLOv11n AI model
+
+Tools: Git, GitHub, VSCode, Node.js, Python 3.10
+
+Other: JSON, REST APIs, Image Processing Libraries
+
+🔹 Author
+
+Usman Safdar
+BSc Software Engineering | Full-stack Developer | AI Enthusiast
+https://github.com/usmansafdarmirza
